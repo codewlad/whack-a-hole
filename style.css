@@ -1,0 +1,153 @@
+:root {
+    font-size: 62.5%;
+    --fs-body: 1.6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    padding: 2rem;
+    min-width: 30rem;
+    font-size: var(--fs-body);
+}
+
+#page {
+    margin: auto;
+    max-width: 112.5rem;
+    width: 100%;
+    padding-bottom: 0;
+    background-image: url(./fundo.svg);
+    background-size: cover;
+    position: relative;
+    border: 5px solid darkgreen;
+}
+
+#page::before {
+    content: "";
+    height: 0;
+    float: left;
+    padding-bottom: 70%;
+}
+    
+#page::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+h1 {
+    font-family: 'DynaPuff', cursive;
+    color: #FFF;
+    font-size: clamp(1rem, 1rem + 2vw, 7rem);
+    position: absolute;
+    top: 7%;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 100, 0, 0.5);
+    padding: 1%;
+}
+
+.grid {
+    display: grid;
+    position: absolute;
+    bottom: 13%;
+    grid-template-areas:
+        "A B C D"
+        "E F G H"
+        "I J K L";
+    margin: 0 auto;
+    column-gap: 10%;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.grid div {
+    background-image: url(./toupeira0.svg);
+    background-size: contain;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    max-width: 21.3rem;
+    width: 100%;
+    height: auto;
+}
+
+.grid img {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+}
+
+.grid > div:nth-child(2) {
+    grid-area: B;
+    animation-name: showmole;
+    animation-duration: 5s;
+    animation-delay: 1000ms;
+    animation-iteration-count: infinite;
+}
+
+.grid > div:nth-child(4) {
+    grid-area: D;
+    animation-name: showmole;
+    animation-duration: 5s;
+    animation-delay: 2300ms;
+    animation-iteration-count: infinite;
+}
+
+.grid > div:nth-child(5) {
+    grid-area: E;
+    animation-name: showmole;
+    animation-duration: 5s;
+    animation-delay: 1500ms;
+    animation-iteration-count: infinite;
+}
+
+.grid > div:nth-child(11) {
+    grid-area: K;
+    animation-name: showmole;
+    animation-duration: 5s;
+    animation-delay: 500ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes showmole {
+    0% {
+        background-image: url(./toupeira0.svg);
+    }
+
+    2% {
+        background-image: url(./toupeira1.svg);
+    }
+
+    4% {
+        background-image: url(./toupeira2.svg);
+    }
+
+    6% {
+        background-image: url(./toupeira3.svg);
+    }
+
+    20% {
+        background-image: url(./toupeira3.svg);
+    }
+
+    22% {
+        background-image: url(./toupeira2.svg);
+    }
+
+    24% {
+        background-image: url(./toupeira1.svg);
+    }
+
+    26% {
+        background-image: url(./toupeira0.svg);
+    }
+
+    100% {
+        background-image: url(./toupeira0.svg);
+    }
+}
